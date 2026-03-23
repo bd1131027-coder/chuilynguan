@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳小明 - 專業個人特色介紹</title>
+    <style>
+        /* 基礎樣式 (LinkedIn 藍灰色調) */
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef; /* 淺灰色背景 */
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        /* 網頁容器 */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff; /* 白色卡片 */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 區塊樣式 */
+        section {
+            padding: 24px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h1, h2, h3 {
+            color: #000;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        /* 頁首 (LinkedIn Cover/Intro Section) */
+        .profile-header {
+            position: relative;
+            background-color: #0a66c2; /* LinkedIn 藍色 */
+            color: #fff;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 背景圖片 (選填) */
+        .profile-background {
+            width: 100%;
+            height: 150px;
+            background-color: #f3f2ef; /* 或更換為 Data URI */
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* 頭像與基本資訊 */
+        .profile-info {
+            display: flex;
+            align-items: flex-start;
+            margin-top: -60px; /* 向上移動以覆蓋背景 */
+            width: 100%;
+            padding: 0 24px 24px;
+            box-sizing: border-box;
+        }
+
+        /* 圓形頭像 (嵌入 Data URI) */
+        .profile-picture-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            overflow: hidden;
+            flex-shrink: 0;
+            margin-right: 24px;
+        }
+
+        .profile-picture-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            flex-grow: 1;
+        }
+
+        .profile-text h1 {
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .profile-text .headline {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .profile-text .contact-info {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* 關於我 */
+        .about-section h2 {
+            font-size: 1.6rem;
+        }
+
+        /* 工作經歷 */
+        .experience-item {
+            margin-bottom: 24px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .experience-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            background-color: #f3f2ef; /* 預設灰色 logo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .experience-content {
+            flex-grow: 1;
+        }
+
+        .experience-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-content .company-dates {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .experience-content ul {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+
+        /* 技能 */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills-list li {
+            background-color: #e6f3ff;
+            color: #0a66c2;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* 專案與學歷 */
+        .project-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .education-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0;
+        }
+
+        /* 頁尾與額外資訊 */
+        .footer {
+            background-color: #fff;
+            color: #666;
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 10px;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-picture-container {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .profile-text h1 {
+                font-size: 2rem;
+            }
+
+            .profile-text .headline {
+                font-size: 1rem;
+            }
+
+            .experience-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .experience-logo {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <section class="profile-header">
+            <div class="profile-background"></div>
+            
+            <div class="profile-info">
+                <div class="profile-picture-container">
+                    <img id="profile-picture" src="https://i.pinimg.com/originals/8c/9f/ee/8c9fee456a36a6fa6e4e7bdd7e5542b0.jpg">
+                </div>
+                
+                <div class="profile-text">
+                    <h1>威辰 (William Jakrapatr)</h1>
+                    <p class="headline">資深數位行銷經理 | 專注於品牌增長與數據分析</p>
+                    <p class="contact-info">
+                        台北市, 台灣 | 
+                        <a href="mailto:william.jkp@email.com">william.jkp@email.com</a>
+                        <a href="https://linkedin.com/in/xiaomingchen" target="_blank">LinkedIn</a>
+                        <a href="https://yourwebsite.me" target="_blank">個人網站</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>關於我</h2>
+            <p>
+                擁有 8 年數位行銷經驗的資深經理，專注於品牌行銷戰略、數位增長與用戶數據分析。擅長運用跨部門資源主導大型專案，並透過數據洞察推動業務增長。對行銷科技與數據驅動的決策充滿熱情。
+            </p>
+            <p>
+                目前正尋求能夠發揮品牌管理與數據分析優勢的挑戰性機會。
+            </p>
+        </section>
+
+        <section class="experience-section">
+            <h2>工作經歷</h2>
+
+            <div class="experience-item">
+                <div class="experience-logo">Logo</div> <div class="experience-content">
+                    <h3>資深行銷經理</h3>
+                    <p class="company-dates">
+                        大華科技公司 (台北市) | 
+                        <span>2018年9月 - 至今</span>
+                    </p>
+                    <ul>
+                        <li>主導並執行 20+ 大型品牌行銷專案，將品牌知名度提升 30%。</li>
+                        <li>建立數據分析團隊，透過用戶行為分析提高行銷 ROI 50%。</li>
+                        <li>跨部門溝通協調，帶領 5 人團隊完成產品發表會。</li>
+                        <li>年度預算管理 1000萬 NTD。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-logo">Logo</div> <div class="experience-content">
+                    <h3>行銷專員</h3>
+                    <p class="company-dates">
+                        新創有限公司 (台北市) | 
+                        <span>2015年6月 - 2018年8月</span>
+                    </p>
+                    <ul>
+                        <li>負責社群媒體營運與內容行銷，將追蹤人數增加 200%。</li>
+                        <li>規劃並執行網路廣告 (Google Ads, FB Ads) 活動。</li>
+                        <li>分析行銷數據並製作週報、月報。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2>核心技能</h2>
+            <ul class="skills-list">
+                <li>品牌行銷</li>
+                <li>數位行銷 (SEO/SEM)</li>
+                <li>數據分析</li>
+                <li>專案管理</li>
+                <li>跨部門溝通</li>
+                <li>行銷科技 (MarTech)</li>
+                <li>用戶行為洞察</li>
+                <li>團隊領導</li>
+            </ul>
+        </section>
+
+        <section class="projects-section">
+            <h2>專案經驗</h2>
+            <div class="project-item">
+                <h3>行銷自動化平台導入專案 (大華科技)</h3>
+                <p>
+                    擔任主要負責人，成功整合 CRM 系統並導入 HubSpot 自動化平台，將潛在客戶轉化率提升 15%。
+                </p>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2>學歷</h2>
+            <div class="education-item">
+                <h3>國立台北大學</h3>
+                <p>企業管理學系, 碩士</p>
+                <p class="company-dates">2013年 - 2015年</p>
+            </div>
+            <div class="education-item">
+                <h3>國立台灣科技大學</h3>
+                <p>工商管理學系, 學士</p>
+                <p class="company-dates">2009年 - 2013年</p>
+            </div>
+        </section>
+
+        <div class="footer">
+            &copy; 2024 陳小明. 專業介紹網頁 - 單一檔案 Data URI 嵌入版
+        </div>
+
+    </div>
+
+</body>
+</html>
